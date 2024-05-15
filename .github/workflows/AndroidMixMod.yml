@@ -32,6 +32,9 @@ jobs:
         with:
           packages: dotnet-runtime-6.0
           version: 1.0
+      - name: Add .NET to PATH
+        run: echo "${env:PATH}:/usr/share/dotnet" >> $GITHUB_PATH
+        shell: bash
       - name: Download hearthstone apk
         run: |
           repo_dir=$(pwd)
